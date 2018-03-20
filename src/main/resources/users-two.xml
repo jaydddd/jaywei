@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.mybatis.dto.Userthree">
+    <resultMap id="userOne" type="com.qianfeng.mybatis.dto.UserDto2">
+
+        <result property="name" column="users_name" javaType="java.lang.String"/>
+        <result property="email" column="users_email" javaType="java.lang.String"/>
+        <result property="password" column="users_pwd" javaType="java.lang.String"/>
+        <result property="sex" column="users_sex" javaType="java.lang.Character"/>
+
+        <association property="role" javaType="com.qianfeng.mybatis.dto.Role">
+            <id property="id" column="role_id" javaType="java.lang.Integer"/>
+            <result property="roleName" column="role_name" javaType="java.lang.String"/>
+        </association>
+   </resultMap>
+   <select id="user" resultMap="com.qianfeng.mybatis.dto.IUser">
+     /*         select * from role r join users u on r.users_fk=u.users_id where u.users_name=#{name};*/
+
+    </select>
+
+
+
+    </mapper>

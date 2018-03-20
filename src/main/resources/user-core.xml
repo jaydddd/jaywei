@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.qianfeng.mybatis.dto.Userone">
+<!--
+        <select id="users" resultType="com.qianfeng.mybatis.dto.UserDto">
+                select * from users;
+        </select>-->
+        <resultMap id="userone" type="com.qianfeng.mybatis.dto.UserDto2">
+                <id property="id" column="users_id" javaType="java.lang.Integer"/>
+                <result property="name" column="users_name" javaType="java.lang.String"/>
+                <result property="email" column="users_email" javaType="java.lang.String"/>
+                <result property="password" column="users_pwd" javaType="java.lang.String"/>
+                <result property="sex" column="users_sex" javaType="java.lang.Character"/>
+
+        </resultMap>
+        <select id="userMap" resultMap="userone">
+
+              /*  SELECT  * FROM  users where users_name=#{name};*/
+
+        </select>
+
+</mapper>
